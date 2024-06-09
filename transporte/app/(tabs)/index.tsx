@@ -1,11 +1,4 @@
-import { View } from 'react-native'
-import React from 'react'
-import Login from '@/components/Login'
+import { registerRootComponent } from 'expo';
+import App from '@/App'; // Ajusta la ruta según la ubicación de App
 
-export default function index() {
-  return (
-    <View>
-       <Login></Login>
-    </View>
-  )
-}
+registerRootComponent(App);

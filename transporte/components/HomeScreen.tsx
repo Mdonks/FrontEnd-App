@@ -19,13 +19,6 @@ const HomeScreen: React.FC<Props> = ({ navigation }) => {
     navigation.navigate('Informes');
   };
 
-  const handleNavigateToHistorial = () => {
-    navigation.navigate('Historial');
-  };
-
-  const handleNavigateToGestionServicios = () => {
-    navigation.navigate('GestionServicios');
-  };
 
   return (
     <View style={styles.container}>
@@ -33,8 +26,6 @@ const HomeScreen: React.FC<Props> = ({ navigation }) => {
       <View style={styles.buttonContainer}>
         <Button title="Registrar Vuelta" onPress={handleNavigateToRegistroVuelta} />
         <Button title="Informes" onPress={handleNavigateToInformes} />
-        <Button title="Historial" onPress={handleNavigateToHistorial} />
-        <Button title="Gestión de Servicios" onPress={handleNavigateToGestionServicios} />
       </View>
     </View>
   );

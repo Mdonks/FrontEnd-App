@@ -51,8 +51,14 @@ const RegistroVueltaScreen: React.FC = () => {
         value={pasajeros}
         onChangeText={setPasajeros}
       />
-      <Button title="Registrar Vuelta" onPress={handleRegistro} />
-      <Button title="Volver" onPress={() => navigation.navigate('Home')} />
+      <View style={styles.buttonContainer}>
+        <View style={styles.buttonWrapper}>
+          <Button title="Registrar Vuelta" onPress={handleRegistro} />
+        </View>
+        <View style={styles.buttonWrapper}>
+          <Button title="Volver" onPress={() => navigation.navigate('Home')} />
+        </View>
+      </View>
     </View>
   );
 };
@@ -78,6 +84,15 @@ const styles = StyleSheet.create({
     backgroundColor: '#D9D9D9',
     fontSize: Platform.OS === 'web' ? 16 : 12,
   },
+  buttonContainer: {
+    width: '100%',
+    alignItems: 'center',
+  },
+  buttonWrapper: {
+    width: '90%',
+    marginBottom: 10,
+  },
 });
 
 export default RegistroVueltaScreen;
+

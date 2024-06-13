@@ -6,14 +6,17 @@ import LoginScreen from './LoginScreen';
 import LoadingScreen from './LoadingScreen';
 import HomeScreen from './HomeScreen';
 import RegistroVueltaScreen from './RegistroVueltaScreen';
-import InformesScreen from './InformesScreen'; // Importamos InformesScreen
+import InformesScreen from './InformesScreen';
+import PerfilScreen from './PerfilScreen';
+
 
 export type RootStackParamList = {
   Login: undefined;
   Loading: undefined;
   Home: undefined;
   RegistroVuelta: undefined;
-  Informes: undefined; // Definimos Informes en el RootStackParamList
+  Informes: undefined; 
+  Perfil: undefined;
 };
 
 const Stack = createNativeStackNavigator<RootStackParamList>();
@@ -27,6 +30,7 @@ const AppNavigator: React.FC = () => {
         <Stack.Screen name="Home" component={HomeScreen} options={{ headerShown: false }} />
         <Stack.Screen name="RegistroVuelta" component={RegistroVueltaScreen} options={{ headerShown: false }} />
         <Stack.Screen name="Informes" component={InformesScreen} options={{ headerShown: false }} />
+        <Stack.Screen name="Perfil" component={PerfilScreen} options={{ headerShown: false }} />
       </Stack.Navigator>
     </NavigationContainer>
   );

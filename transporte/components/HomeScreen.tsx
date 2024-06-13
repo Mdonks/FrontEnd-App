@@ -1,4 +1,3 @@
-// HomeScreen.tsx
 import React from 'react';
 import { View, Text, Button, StyleSheet } from 'react-native';
 import { NativeStackNavigationProp } from '@react-navigation/native-stack';
@@ -19,13 +18,23 @@ const HomeScreen: React.FC<Props> = ({ navigation }) => {
     navigation.navigate('Informes');
   };
 
+  const handleNavigateToPerfil = () => {
+    navigation.navigate('Perfil');
+  };
 
   return (
     <View style={styles.container}>
       <Text style={styles.text}>Bienvenido a la Aplicación de Transporte Urbano</Text>
       <View style={styles.buttonContainer}>
-        <Button title="Registrar Vuelta" onPress={handleNavigateToRegistroVuelta} />
-        <Button title="Informes" onPress={handleNavigateToInformes} />
+        <View style={styles.buttonWrapper}>
+          <Button title="Registrar Vuelta" onPress={handleNavigateToRegistroVuelta} />
+        </View>
+        <View style={styles.buttonWrapper}>
+          <Button title="Informes" onPress={handleNavigateToInformes} />
+        </View>
+        <View style={styles.buttonWrapper}>
+          <Button title="Perfil" onPress={handleNavigateToPerfil} />
+        </View>
       </View>
     </View>
   );
@@ -45,6 +54,9 @@ const styles = StyleSheet.create({
   },
   buttonContainer: {
     marginTop: 20,
+  },
+  buttonWrapper: {
+    marginBottom: 10,
   },
 });
 

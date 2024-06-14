@@ -3,6 +3,7 @@ import { View, Text, TextInput, Button, StyleSheet, Platform } from 'react-nativ
 import { useNavigation } from '@react-navigation/native';
 import { NativeStackNavigationProp } from '@react-navigation/native-stack';
 import { RootStackParamList } from './AppNavigator';
+import DateTimePickerModal from 'react-native-modal-datetime-picker'
 
 type RegistroVueltaScreenNavigationProp = NativeStackNavigationProp<RootStackParamList, 'RegistroVuelta'>;
 
@@ -20,6 +21,21 @@ const RegistroVueltaScreen: React.FC = () => {
     // Luego, puedes navegar a la siguiente pantalla o realizar alguna acción adicional
   };
 
+  const [isDatePickerVisible, setDataPickerVisible] = useState(false)
+
+  const showDatePicker = () =>{
+    setDataPickerVisible(true)
+  }
+
+  const hideDatePicker = () => {
+    setDataPickerVisible(false)
+  }
+
+  const handlerConfirmar = () =>{
+    console.warn('El dato es: ', Date);
+    hideDatePicker();
+  }
+
   return (
     <View style={styles.container}>
       <Text style={styles.label}>Fecha:</Text>
@@ -28,6 +44,12 @@ const RegistroVueltaScreen: React.FC = () => {
         placeholder="Ingrese la fecha"
         value={fecha}
         onChangeText={setFecha}
+      />
+      <Button title='show date' onPress={showDatePicker}></Button>
+      <DateTimePickerModal
+        mode="date"
+        onConfirm={handlerConfirmar}
+        onCancel={hideDatePicker}
       />
       <Text style={styles.label}>Hora:</Text>
       <TextInput

@@ -19,7 +19,7 @@ const PerfilScreen: React.FC<Props> = ({ navigation }) => {
 
   const handleEditProfile = () => {
     if (isEditing) {
-      // Aquí puedes agregar la lógica para guardar los cambios del perfil
+  
       console.log('Perfil actualizado:', { name, idNumber, email, phone });
     }
     setIsEditing(!isEditing);
